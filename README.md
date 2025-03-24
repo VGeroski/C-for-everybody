@@ -1,5 +1,6 @@
 # C for everybody
 Repository for C for Everybody - Coursera, Dr. Chuck Severance
+
 The C programming Language By Brian W. Kernighan and Dennis M. Ritchie
 
 1. Exploring C (Chapter 1)
