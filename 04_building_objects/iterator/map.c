@@ -8,6 +8,7 @@ struct MapEntry
     int value;
     /* private: */
     struct MapEntry *__next;
+    struct MapEntry *__prev;
 };
 
 struct Map

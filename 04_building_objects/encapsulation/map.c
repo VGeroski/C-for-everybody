@@ -46,7 +46,7 @@ void __Map_dump(struct Map *self)
 }
 
 /**
- * Descrutor for the Map Class
+ * Destructor for the Map Class
  *
  * Loops through and frees all the keys and
  * entries in the map. The values are integers
@@ -113,27 +113,32 @@ void __Map_put(struct Map *self, char *key, int value)
 {
     struct MapEntry *old = __Map_find(self, key);
     if (old != NULL)
-        old->value = value;
-    else
     {
-        struct MapEntry *new = malloc(sizeof(*new));
-        new->key = malloc(strlen(key) + 1);
-        if (new == NULL || new->key == NULL)
-            error("malloc");
-        strcpy(new->key, key);
-        new->value = value;
-        new->__next = NULL;
-
-        if (self->__head == NULL)
-            self->__head = self->__tail = new;
-        else
-        {
-            self->__tail->__next = new;
-            self->__tail = new;
-        }
-
-        self->__count++;
+        old->value = value;
+        return;
     }
+
+    struct MapEntry *new = malloc(sizeof(*new));
+    if (new == NULL)
+        error("malloc");
+
+    new->key = malloc(strlen(key) + 1);
+    if (new->key == NULL)
+    {
+        free(new);
+        error("malloc");
+    }
+    strcpy(new->key, key);
+    new->value = value;
+    new->__next = NULL;
+
+    if (self->__head == NULL)
+        self->__head = new;
+    else
+        self->__tail->__next = new;
+    self->__tail = new;
+    
+    self->__count++;
 }
 
 struct Map *Map_new()
