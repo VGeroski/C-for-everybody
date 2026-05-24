@@ -159,8 +159,8 @@ void __Map_put(struct Map *self, char *key, int value)
     self->__count++;
 }
 ```
-![dodavanje-prazna-mapa](/img/dodavanje_prazna_mapa.jpg)
-![dodavanje-mapa](/img/dodavanje_mapa.jpg)
+![../dodavanje-prazna-mapa](/img/dodavanje_prazna_mapa.jpg)
+![../dodavanje-mapa](/img/dodavanje_mapa.jpg)
 
 ## Iteratori
 Prolazimo kroz elemente kolekcije, postujuci granice apstrakcije.
