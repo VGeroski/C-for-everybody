@@ -204,4 +204,4 @@ int main()
 ```
 
 Radi lakseg pracenja stanje po memoriji, prihvatamo prostiji model u memoriji:
-![uproscen-prikaz](/img/uproscavanje_slike.jpg)
+![uproscen-prikaz](img/uproscavanje_slike.jpg)
